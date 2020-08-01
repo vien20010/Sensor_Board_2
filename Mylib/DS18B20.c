@@ -4,6 +4,7 @@
  */
 
 #include "DS18B20.h"
+
 /**
  * @brief - Start DS18B20 to Transmit data
  * @param DS18B20_Star - Initialization Timing for DS18B20
@@ -127,12 +128,14 @@ float DS18B20_GetTemp(void)
     uint32_t temp1;
     float temp2;
     Presence = DS18B20_Star();
+    DBG("\n%d\n",Presence);
     SystickDelay_ms(1);
     DS18B20_Write(0xCC);
     DS18B20_Write(0x44);
     SystickDelay_ms(800);
 
     Presence = DS18B20_Star();
+    DBG("\n%d\n",Presence);
     SystickDelay_ms(1);
     DS18B20_Write(0xCC);
     DS18B20_Write(0xBE);
