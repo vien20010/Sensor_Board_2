@@ -29,7 +29,7 @@ I (.\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D7849C4)
 I (.\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D7849C4)
 I (.\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D7849C4)
 I (.\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D7849C4)
-F (.\Src\main.c)(0x5F25F342)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Src -I .\STM32F10x_StdPeriph_Driver\inc -I .\Mylib-I.\RTE\_Sensor_Board_2-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Src\main.c)(0x5F262408)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Src -I .\STM32F10x_StdPeriph_Driver\inc -I .\Mylib-I.\RTE\_Sensor_Board_2-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB87F2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EFC4021)
 I (Src\stm32f10x.h)(0x4D784AC4)
@@ -67,7 +67,7 @@ I (.\Mylib\Timerx.h)(0x5F0FFC76)
 I (.\Mylib\GPIO.h)(0x5F23C69B)
 I (.\Mylib\debug.h)(0x5F23D73F)
 I (.\Mylib\Uart.h)(0x5F253A80)
-I (.\Mylib\ADCx.h)(0x5F26034A)
+I (.\Mylib\ADCx.h)(0x5F261A89)
 F (.\Src\stm32f10x_it.c)(0x5F26131E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Src -I .\STM32F10x_StdPeriph_Driver\inc -I .\Mylib-I.\RTE\_Sensor_Board_2-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (Src\stm32f10x_it.h)(0x4D99B23E)
 I (Src\stm32f10x.h)(0x4D784AC4)
@@ -460,8 +460,8 @@ I (.\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D7849C4)
 I (.\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D7849C4)
 I (Mylib\GPIO.h)(0x5F23C69B)
 F (.\Mylib\debug.h)(0x5F23D73F)()
-F (.\Mylib\ADCx.c)(0x5F26180F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Src -I .\STM32F10x_StdPeriph_Driver\inc -I .\Mylib-I.\RTE\_Sensor_Board_2-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\objects\adcx.o --omf_browse .\objects\adcx.crf --depend .\objects\adcx.d)
-I (Mylib\ADCx.h)(0x5F26034A)
+F (.\Mylib\ADCx.c)(0x5F261A8A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Src -I .\STM32F10x_StdPeriph_Driver\inc -I .\Mylib-I.\RTE\_Sensor_Board_2-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Lam_Vien\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_MD-o .\objects\adcx.o --omf_browse .\objects\adcx.crf --depend .\objects\adcx.d)
+I (Mylib\ADCx.h)(0x5F261A89)
 I (.\Src\stm32f10x.h)(0x4D784AC4)
 I (.\Src\core_cm3.h)(0x4D524968)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB87F2)

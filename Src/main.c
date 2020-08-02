@@ -32,7 +32,7 @@ int main(void)
 	while (1)
 	{
 		RS485_PutString(USARTy,"Vien dep trai",2);
-		DBG("\nVien");
+		DBG("\nVien"); 
 		temp=DS18B20_GetTemp();
     //uhADCxConvertedValue=ADC_GetConversionValue(ADCxx);
 	}

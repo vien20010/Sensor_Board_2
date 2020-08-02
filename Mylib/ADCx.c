@@ -9,7 +9,7 @@
 
 #include "ADCx.h"
 
-volatile uint16_t uhADCxConvertedValue[2];
+volatile uint16_t uhADCxConvertedValue[7];
 
 /**
   * @brief  ADC1 Channel 7 PA7 Configuration
@@ -39,12 +39,17 @@ void ADC_Config(void)
   ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
   ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-  ADC_InitStructure.ADC_NbrOfChannel = 2;
+  ADC_InitStructure.ADC_NbrOfChannel = 7;
   ADC_Init(ADCxx, &ADC_InitStructure);
 
   /* ADCx regular channel7 configuration **************************************/
-  ADC_RegularChannelConfig(ADCxx, ADCx_CHANNEL, 1, ADC_SampleTime_55Cycles5);
-  ADC_RegularChannelConfig(ADCxx, ADC_Channel_5, 2, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_1, 2, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_2, 3, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_3, 4, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_4, 5, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_5, 6, ADC_SampleTime_55Cycles5);
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_7, 7, ADC_SampleTime_55Cycles5);
   ADC_DMACmd(ADC1, ENABLE);
   /* Enable ADCx */
   ADC_Cmd(ADCxx, ENABLE);
@@ -85,7 +90,7 @@ void DMA_Config(void)
   DMA_InitStructure.DMA_PeripheralBaseAddr = ADCx_DR_ADDRESS;
   DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)uhADCxConvertedValue;
   DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
-  DMA_InitStructure.DMA_BufferSize = 2;
+  DMA_InitStructure.DMA_BufferSize = 7;
   DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
   DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
