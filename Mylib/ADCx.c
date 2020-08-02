@@ -9,15 +9,10 @@
 
 #include "ADCx.h"
 
-volatile uint16_t uhADCxConvertedValue = 0;
+volatile uint16_t uhADCxConvertedValue[2];
 
 /**
-  * @brief  ADC3 channel07 with DMA configuration
-  * @note   This function Configure the ADC peripheral  
-            1) Enable peripheral clocks
-            2) DMA2_Stream0 channel2 configuration
-            3) Configure ADC Channel7 pin as analog input
-            4) Configure ADC3 Channel7 
+  * @brief  ADC1 Channel 7 PA7 Configuration
   * @param  None
   * @retval None
   */
@@ -28,7 +23,7 @@ void ADC_Config(void)
   GPIO_InitTypeDef GPIO_InitStructure;
 
   /* Enable ADCx, GPIO clocks */
-  RCC_ADCCLKConfig(RCC_PCLK2_Div8);
+  //RCC_ADCCLKConfig(RCC_PCLK2_Div8);
   RCC_APB2PeriphClockCmd(ADCx_CHANNEL_GPIO_CLK, ENABLE);
   RCC_APB2PeriphClockCmd(ADCx_CLK, ENABLE);
 
@@ -44,12 +39,12 @@ void ADC_Config(void)
   ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
   ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-  ADC_InitStructure.ADC_NbrOfChannel = 1;
+  ADC_InitStructure.ADC_NbrOfChannel = 2;
   ADC_Init(ADCxx, &ADC_InitStructure);
 
   /* ADCx regular channel7 configuration **************************************/
   ADC_RegularChannelConfig(ADCxx, ADCx_CHANNEL, 1, ADC_SampleTime_55Cycles5);
-
+  ADC_RegularChannelConfig(ADCxx, ADC_Channel_5, 2, ADC_SampleTime_55Cycles5);
   ADC_DMACmd(ADC1, ENABLE);
   /* Enable ADCx */
   ADC_Cmd(ADCxx, ENABLE);
@@ -74,12 +69,7 @@ void ADC_Config(void)
 }
 
 /**
-  * @brief  ADC3 channel07 with DMA configuration
-  * @note   This function Configure the ADC peripheral  
-            1) Enable peripheral clocks
-            2) DMA2_Stream0 channel2 configuration
-            3) Configure ADC Channel7 pin as analog input
-            4) Configure ADC3 Channel7 
+  * @brief  DMA ADC Configuration
   * @param  None
   * @retval None
   */
@@ -93,15 +83,15 @@ void DMA_Config(void)
   /* DMA1 channel1 configuration------------------ */
   DMA_DeInit(ADCx_DMA_CHANNELx);
   DMA_InitStructure.DMA_PeripheralBaseAddr = ADCx_DR_ADDRESS;
-  DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&uhADCxConvertedValue;
+  DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)uhADCxConvertedValue;
   DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
-  DMA_InitStructure.DMA_BufferSize = 1;
+  DMA_InitStructure.DMA_BufferSize = 2;
   DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
-  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Disable;
+  DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
   DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
   DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
   DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
-  DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+  DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
   DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
   DMA_Init(ADCx_DMA_CHANNELx, &DMA_InitStructure);
 
