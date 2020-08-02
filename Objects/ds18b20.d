@@ -32,3 +32,4 @@
 .\objects\ds18b20.o: Mylib\Systick.h
 .\objects\ds18b20.o: Mylib\Timerx.h
 .\objects\ds18b20.o: Mylib\GPIO.h
+.\objects\ds18b20.o: Mylib\debug.h

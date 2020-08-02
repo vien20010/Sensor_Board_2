@@ -31,12 +31,9 @@
 .\objects\main.o: .\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\main.o: .\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\main.o: .\Mylib\Systick.h
-.\objects\main.o: .\Mylib\I2C.h
-.\objects\main.o: .\Mylib\MAX44009.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\Mylib\DS18B20.h
 .\objects\main.o: .\Mylib\Timerx.h
 .\objects\main.o: .\Mylib\GPIO.h
-.\objects\main.o: .\Mylib\DHT11.h
-.\objects\main.o: .\Mylib\Uart.h
 .\objects\main.o: .\Mylib\debug.h
+.\objects\main.o: .\Mylib\Uart.h
+.\objects\main.o: .\Mylib\ADCx.h

@@ -7,6 +7,8 @@
 #include "Timerx.h"
 #include "Uart.h"
 #include "debug.h"
+#include "ADCx.h"
+
 
 #ifdef __GNUC__
   /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
@@ -16,47 +18,23 @@
   #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif /* __GNUC__ */
 
-float lux = 0, temp = 0;
+float temp = 0;
 uint8_t txbuffer[21];
-
-
-
 
 int main(void)
 {
-
-	
 	Systick_Configuration();
-	MAX44009_Config();
 	TIM4_Config();
 	USART_Config();
+  DMA_Config();
+	ADC_Config();
+	
 	while (1)
 	{
-		uint16_t crc = 0;
-		//temp=DS18B20_GetTemp();
-		lux = MAX44009_GetLightIntensity();
-		DHT11_GetData();
-		//SystickDelay_ms(500);
-
-		sprintf(txbuffer, "a%0.1f,%0.1f,%8.1f", DHT11_temp, DHT11_humd, lux);
-		for (int i = 0; *(txbuffer + i) != '\0'; i++)
-		{
-			//if (*(txbuffer + i) == ' ')
-				//*(txbuffer + i) = '0';
-			crc += *(txbuffer + i);	
-		}
-		RS485_PutString(USARTy,"\n");
-		DBG("%x\n",*(txbuffer+11));
-		*(txbuffer + 19) = (crc >>8) & 0xFF;
-		*(txbuffer + 20) = (crc & 0xFF); 
-		
-		DBG("%x\n",crc);
-		DBG("%x\n",*(txbuffer + 19));
-		DBG("%x\n",*(txbuffer + 20));
-		//RS485_PutString(USARTy,txbuffer);
-		//RS485_PutChar(USARTy,'\n');
-		DBG("\n %d \n",strlen(txbuffer));
-		DBG("\n %s",txbuffer);
+		RS485_PutString(USARTy,"Vien dep trai",2);
+		DBG("\nVien");
+		temp=DS18B20_GetTemp();
+    //uhADCxConvertedValue=ADC_GetConversionValue(ADCxx);
 	}
 }
 
