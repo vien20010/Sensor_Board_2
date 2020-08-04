@@ -37,3 +37,5 @@
 .\objects\main.o: .\Mylib\debug.h
 .\objects\main.o: .\Mylib\Uart.h
 .\objects\main.o: .\Mylib\ADCx.h
+.\objects\main.o: .\Mylib\EC_Sensor.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

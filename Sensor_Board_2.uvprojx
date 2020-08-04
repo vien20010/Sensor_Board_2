@@ -495,6 +495,11 @@
               <FileType>1</FileType>
               <FilePath>.\Mylib\ADCx.c</FilePath>
             </File>
+            <File>
+              <FileName>EC_Sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Mylib\EC_Sensor.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -41,7 +41,7 @@ void USART_Config(void)
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
     /* When using Parity the word length must be configured to 9 bits */
     USART_InitStructure.USART_Parity = USART_Parity_No;
-    USART_InitStructure.USART_BaudRate = 115200;
+    USART_InitStructure.USART_BaudRate = 9600;
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
     USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 
